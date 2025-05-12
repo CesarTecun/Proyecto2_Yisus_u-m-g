@@ -1,0 +1,28 @@
+
+prog FIBONACCI_RECURSIVO {
+
+    funs {
+        int fibonacci(int n) {
+            si (n <= 1) {
+                ret n;
+            } no {
+                ret fibonacci(n - 1) + fibonacci(n - 2);
+            }
+        }
+    }
+
+    ini {
+        mst("Serie Fibonacci desde 0 hasta 45:");
+
+        int i = 0;
+        loop (i <= 45) {
+            int f = fibonacci(i);
+            mst(f);
+            i = i + 1;
+        }
+
+        mst("Fin del programa Fibonacci.");
+    }
+
+    Fin
+}

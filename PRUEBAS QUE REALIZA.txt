@@ -1,0 +1,654 @@
+prog SUMA {
+    ini {
+        int a = 5;
+        int b = 3;
+        aut c = a + b;
+        mst("Resultado:");
+        mst(c);
+    } Fin
+}
+
+prog FACIL1 {
+    ini {
+        int a = 4;
+        int b = 6;
+        aut c = a + b;
+        mst("Resultado:");
+        mst(c);
+    } Fin
+}
+
+prog FACIL2 {
+    ini {
+        int x = 10;
+        si (x > 5) {
+            mst("x es mayor que 5");
+        } no {
+            mst("x no es mayor que 5");
+        }
+    } Fin
+}
+
+
+prog DIFICIL1 {
+    funs {
+        int calcular(int a, int b) {
+            si (a > b) {
+                ret a - b;
+            } no {
+                ret a + b;
+            }
+        }
+    }
+
+    ini {
+        int x = 10;
+        int y = 3;
+        int res = calcular(x, y);
+        mst("Resultado:");
+        mst(res);
+    } Fin
+}
+
+
+
+prog LOOPSUM {
+    ini {
+        int i = 1;
+        int total = 0;
+        loop (i <= 5) {
+            total = total + i * 2;
+            i = i + 1;
+        }
+        mst("Total:");
+        mst(total);
+    } Fin
+}
+
+
+
+
+
+
+
+prog BUCLES_FUNCION {
+
+    funs {
+        int multiplicar(int a, int b) {
+            int resultado = a * b;
+            ret resultado;
+        }
+    }
+
+    ini {
+        int x = 10;
+        flt y = 3.5;
+        flt xd = x + y * 2;
+
+        mst(xd);
+        mst(x);
+        mst(y);
+        mst(x + y);
+
+        si (x < 15) {
+            mst("x es menor que 15");
+        } no {
+            mst("x no es menor que 15");
+        }
+
+        mst("Inicio del bucle WHILE");
+        loop (x > 0) {
+            mst(x);
+            x = x - 1;
+        }
+
+        mst("Inicio del bucle DO LOOP");
+        int d = 3;
+        do {
+            mst(d);
+            d = d - 1;
+        } loop (d > 0);
+
+        mst("Inicio del bucle FOR");
+        int i = 0;
+        for (i = 0; i < 5; i = i + 1) {
+            mst(i);
+        }
+
+        mst("Llamando a función multiplicar(4, 5)");
+        int m = multiplicar(4, 5);
+        mst(m);
+
+        mst("Fin del programa");
+    }
+
+    Fin
+}
+
+
+
+
+
+
+bucles
+
+prog DOLOOP {
+    ini {
+        int n = 3;
+        do {
+            mst("Repetir");
+            n = n - 1;
+        } loop (n > 0);
+    }
+    Fin
+}
+
+
+
+prog JERARQ2 {
+    ini {
+        int r = (2 + 3) * (4 ^ 2);
+        mst("Resultado:");
+        mst(r);
+    } Fin
+#######################################################################
+
+DIFICILES
+
+prog MEGAJERARQUIA {
+    funs {
+        flt megaOperacion(flt a, flt b, flt c, flt d) {
+            flt resultado = ((a + b) * (c - d) + a ^ 2 - b / (c + d)) * ((d ^ 2 + a * b) / (a + 1));
+            ret resultado;
+        }
+    }
+
+    ini {
+        flt a = 2.0;
+        flt b = 3.0;
+        flt c = 4.0;
+        flt d = 1.0;
+
+        flt r = megaOperacion(a, b, c, d);
+        mst("Resultado de megaOperacion:");
+        mst(r);
+    }
+
+    Fin
+}
+
+
+
+prog INTEGRADOR {
+
+    funs {
+        # Función para calcular el cuadrado de un número
+        int cuadrado(int n) {
+            ret n * n;
+        }
+
+        # Función que eleva a la potencia usando bucle
+        int potencia(int base, int exp) {
+            int res = 1;
+            int i = 0;
+            for (i = 0; i < exp; i = i + 1) {
+                res = res * base;
+            }
+            ret res;
+        }
+
+        # Función que aplica una fórmula con jerarquía compleja
+        flt formula(flt a, flt b) {
+            flt res = (a + b * 2) / (a - 1);
+            ret res;
+        }
+    }
+
+    ini {
+        int x = 3;
+        int y = 4;
+        flt z = 2.5;
+
+        mst("✔ Evaluando jerarquía de operaciones:");
+        flt resultado = (x + y) * z / 2 + x ^ 2;
+        mst(resultado);
+
+        mst("✔ Bucle DO LOOP:");
+        int i = 0;
+        do {
+            mst(i);
+            i = i + 1;
+        } loop (i < 3);
+
+        mst("✔ Bucle FOR:");
+        int j = 0;
+        for (j= 0; j < 3; j = j + 1) {
+            mst(j);
+        }
+        
+        
+
+        mst("✔ Función cuadrado(5):");
+        int c = cuadrado(5);
+        mst(c);
+
+        mst("✔ Función potencia(2, 3):");
+        int p = potencia(2, 3);
+        mst(p);
+
+        mst("✔ Función formula(4.0, 2.0):");
+        flt f = formula(4.0, 2.0);
+        mst(f);
+
+        mst("✔ Fin del programa");
+    }
+
+    Fin
+}
+
+
+
+
+
+
+
+
+prog BUCLES_FUNCION {
+
+    funs {
+        int multiplicar(int a, int b) {
+            int resultado = a * b;
+            ret resultado;
+        }
+    }
+
+    ini {
+        int x = 10;
+        flt y = 3.5;
+        flt xd = x + y * 2;
+
+        mst();
+        mst(xd);
+        mst(x);
+        mst(y);
+        mst(x + y);
+
+        si (x < 15) {
+            mst("x es menor que 15");
+        } no {
+            mst("x no es menor que 15");
+        }
+
+        mst("Inicio del bucle WHILE");
+        loop (x > 0) {
+            mst(x);
+            x = x - 1;
+        }
+
+        mst("Inicio del bucle DO LOOP");
+        int d = 3;
+        do {
+            mst(d);
+            d = d - 1;
+        } loop (d > 0);
+
+        mst("Inicio del bucle FOR");
+        int i = 0;
+        for (i = 0; i < 5; i = i + 1) {
+            mst(i);
+        }
+
+        mst("Llamando a función multiplicar(4, 5)");
+        int m = multiplicar(4, 5);
+        mst(m);
+        mst();
+        #complejas
+            # Operaciones aritméticas complejas
+
+            x=10;
+            y=3.5;
+    flt op1 = (x + y) * 2.5;
+    flt op2 = x * y - 4 / 2;
+    flt op3 = (x ^ 2) + (y ^ 2);
+    flt op4 = ((x + 2) * (y - 1)) / 3.0;
+    flt op5 = (x + y) ^ 2;
+
+    mst("Resultados de operaciones complejas:");
+    mst(op1);  # (10 + 3.5) * 2.5
+    mst(op2);  # 10 * 3.5 - 2
+    mst(op3);  # x^2 + y^2
+    mst(op4);  # ((10 + 2) * (3.5 - 1)) / 3.0
+    mst(op5);  # (10 + 3.5)^2
+
+        mst("Fin del programa");
+    }
+
+    Fin
+}
+
+
+
+
+
+prog ORDENAMIENTOS_MANUALES {
+
+    funs {
+        vd bubbleSort3(int a, int b, int c) {
+            mst("== Bubble Sort ==");
+            si (a > b) {
+                int temp = a;
+                a = b;
+                b = temp;
+            }
+            si (b > c) {
+                int temp = b;
+                b = c;
+                c = temp;
+            }
+            si (a > b) {
+                int temp = a;
+                a = b;
+                b = temp;
+            }
+            mst(a); mst(b); mst(c);
+        }
+
+        vd selectionSort3(int a, int b, int c) {
+            mst("== Selection Sort ==");
+            si (a > b) {
+                int temp = a;
+                a = b;
+                b = temp;
+            }
+            si (a > c) {
+                int temp = a;
+                a = c;
+                c = temp;
+            }
+            si (b > c) {
+                int temp = b;
+                b = c;
+                c = temp;
+            }
+            mst(a); mst(b); mst(c);
+        }
+
+        vd insertionSort3(int a, int b, int c) {
+            mst("== Insertion Sort ==");
+            si (b < a) {
+                int temp = a;
+                a = b;
+                b = temp;
+            }
+            si (c < a) {
+                int temp = a;
+                a = c;
+                c = b;
+                b = temp;
+            } no {
+                si (c < b) {
+                    int temp = b;
+                    b = c;
+                    c = temp;
+                }
+            }
+            mst(a); mst(b); mst(c);
+        }
+    }
+
+    ini {
+        mst("== CASO 1: Orden original 9, 2, 5 ==");
+        bubbleSort3(9, 2, 5);
+        selectionSort3(9, 2, 5);
+        insertionSort3(9, 2, 5);
+
+        mst("== CASO 2: Orden ya ascendente 1, 2, 3 ==");
+        bubbleSort3(1, 2, 3);
+        selectionSort3(1, 2, 3);
+        insertionSort3(1, 2, 3);
+
+        mst("== CASO 3: Orden descendente 7, 6, 5 ==");
+        bubbleSort3(7, 6, 5);
+        selectionSort3(7, 6, 5);
+        insertionSort3(7, 6, 5);
+
+        mst("== CASO 4: Mismo valor en dos posiciones 4, 4, 2 ==");
+        bubbleSort3(4, 4, 2);
+        selectionSort3(4, 4, 2);
+        insertionSort3(4, 4, 2);
+
+        mst("== CASO 5: Uno de los valores es cero 0, 9, 1 ==");
+        bubbleSort3(0, 9, 1);
+        selectionSort3(0, 9, 1);
+        insertionSort3(0, 9, 1);
+
+        mst("== CASO 6: Todos iguales 3, 3, 3 ==");
+        bubbleSort3(3, 3, 3);
+        selectionSort3(3, 3, 3);
+        insertionSort3(3, 3, 3);
+
+        mst("Fin del programa.");
+    }
+
+    Fin
+}
+
+
+prog FIBONACCI_RECURSIVO {
+
+    funs {
+        int fibonacci(int n) {
+            si (n <= 1) {
+                ret n;
+            } no {
+                ret fibonacci(n - 1) + fibonacci(n - 2);
+            }
+        }
+    }
+
+    ini {
+        mst("Serie Fibonacci desde 0 hasta 45:");
+
+        int i = 0;
+        loop (i <= 45) {
+            int f = fibonacci(i);
+            mst(f);
+            i = i + 1;
+        }
+
+        mst("Fin del programa Fibonacci.");
+    }
+
+    Fin
+}
+
+prog PERMUTACIONES_BRUTA {
+
+    funs {
+        vd mostrarPermutaciones(int a, int b, int c) {
+            int i = a;
+            loop (i <= c) {
+                int j = a;
+                loop (j <= c) {
+                    int k = a;
+                    loop (k <= c) {
+                        # Verificamos que todos sean distintos
+                        si (i != j && i != k && j != k) {
+                            mst("Permutación:");
+                            mst(i);
+                            mst(j);
+                            mst(k);
+                        }
+                        k = k + 1;
+                    }
+                    j = j + 1;
+                }
+                i = i + 1;
+            }
+        }
+    }
+
+    ini {
+        int a = 1;
+        int b = 2;
+        int c = 3;
+
+        mst("Permutaciones de 1, 2, 3:");
+        mostrarPermutaciones(a, b, c);
+        mst("Fin del programa.");
+    }
+
+    Fin
+}
+
+
+
+prog FUNCION_ACKERMANN {
+
+    funs {
+        int ackermann(int m, int n) {
+            si (m == 0) {
+                ret n + 1;
+            } no {
+                si (n == 0) {
+                    ret ackermann(m - 1, 1);
+                } no {
+                    ret ackermann(m - 1, ackermann(m, n - 1));
+                }
+            }
+        }
+    }
+
+    ini {
+        mst("== FUNCION ACKERMANN ==");
+
+        int a1 = 0;
+        int b1 = 3;
+        int r1 = ackermann(a1, b1);
+        mst("Ackermann("); mst(a1); mst(", "); mst(b1); mst(") ="); mst(r1);
+
+        int a2 = 1;
+        int b2 = 2;
+        int r2 = ackermann(a2, b2);
+        mst("Ackermann("); mst(a2); mst(", "); mst(b2); mst(") ="); mst(r2);
+
+        int a3 = 2;
+        int b3 = 2;
+        int r3 = ackermann(a3, b3);
+        mst("Ackermann("); mst(a3); mst(", "); mst(b3); mst(") ="); mst(r3);
+
+        mst("== Fin de ejecución de Ackermann ==");
+    }
+
+    Fin
+}
+
+
+
+prog BUBBLE_SORT {
+    ini {
+        int a = 9;
+        int b = 1;
+        int c = 5;
+
+        mst("== BUBBLE SORT ==");
+        mst("Original:");
+        mst(a); mst(b); mst(c);
+
+        # Primera pasada
+        si (a > b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        si (b > c) {
+            int temp = b;
+            b = c;
+            c = temp;
+        }
+
+        # Segunda pasada
+        si (a > b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
+        mst("Ordenado:");
+        mst(a); mst(b); mst(c);
+    }
+    Fin
+}
+
+
+prog SELECTION_SORT {
+    ini {
+        int a = 8;
+        int b = 3;
+        int c = 6;
+
+        mst("== SELECTION SORT ==");
+        mst("Original:");
+        mst(a); mst(b); mst(c);
+
+        # Suponemos a como mínimo
+        si (a > b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        si (a > c) {
+            int temp = a;
+            a = c;
+            c = temp;
+        }
+        si (b > c) {
+            int temp = b;
+            b = c;
+            c = temp;
+        }
+
+        mst("Ordenado:");
+        mst(a); mst(b); mst(c);
+    }
+    Fin
+}
+
+
+
+prog INSERTION_SORT {
+    ini {
+        int a = 4;
+        int b = 7;
+        int c = 2;
+
+        mst("== INSERTION SORT ==");
+        mst("Original:");
+        mst(a); mst(b); mst(c);
+
+        # Insertar b
+        si (b < a) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
+        # Insertar c
+        si (c < a) {
+            int temp = a;
+            a = c;
+            c = b;
+            b = temp;
+        } no {
+            si (c < b) {
+                int temp = b;
+                b = c;
+                c = temp;
+            }
+        }
+
+        mst("Ordenado:");
+        mst(a); mst(b); mst(c);
+    }
+    Fin
+}
